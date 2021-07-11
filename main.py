@@ -1,6 +1,4 @@
-# TODO: user have to create an account
-# TODO: if the user already have a account then he/ she have ot login first
-# TODO: if login then,
+
 """
 - Deposite money
 - Send money
