@@ -57,7 +57,7 @@ def login_data():
     user_name = input('Enter your user name / email: ')
     password = input('Enter your password: ')
 
-    print(database.login(user_name, password))
+    database.login(user_name, password)
 
 
 menu()
