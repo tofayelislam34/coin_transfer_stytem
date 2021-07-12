@@ -1,6 +1,7 @@
 import json
 
 
+
 def create(user, email, phone, password):
 
     program_list = {
@@ -35,12 +36,25 @@ def login(user, password):
 
 def login_after_menu(name):
     print(f'welcome to our service MR. {name}')
-    show(name)
 
-def show(name):
-    with open('login_data.json', 'r') as file:                  #context manager
+    show_data(name)
+
+
+def show_data(name):
+    with open('login_data.json', 'r+') as file:  # context manager
         file_content = json.load(file)
 
     for _ in file_content:
         if _['username'] == name:
             print(f'{_[name]}')
+
+
+
+
+
+
+
+
+
+
+
