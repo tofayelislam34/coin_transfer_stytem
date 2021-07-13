@@ -43,14 +43,14 @@ def account_create():
     password = input("password: ")
     data = (user, email, phone, password)
     database.create(*data)
-    pep_choice = input("account successfully created. press 'L' to login now")
+    user_choice = input("account successfully created. press 'L' to login now")
 
-    while pep_choice != 'q':
-        if pep_choice == 'l':
+    while user_choice != 'q':
+        if user_choice == 'l':
             login_data()
         else:
             print('Unknown command!. please try again')
-        pep_choice = input("account successfully created. press 'L' to login now")
+        user_choice = input("account successfully created. press 'L' to login now")
 
 
 def login_data():
