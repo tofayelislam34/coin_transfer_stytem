@@ -1,2 +1,4 @@
 # coin_transfer_stytem
-#ok bosss already done 
+A money transfer system Based on some basic funtionality from Bkash App or some of the other mobile banking services
+
+#Team Py_Scripters
