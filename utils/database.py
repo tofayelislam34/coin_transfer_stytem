@@ -102,3 +102,13 @@ def account_details(name):
     # login_after_menu(name)
 
 
+def send_money():
+    total_tk = 1000
+    tk = int(input("Enter amount you want to sent: "))
+    print(f"your previous tk was:${total_tk} ")
+    remaining_tk = total_tk - tk
+    print(f"After send you have :${remaining_tk}")
+
+
+
+
