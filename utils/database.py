@@ -35,4 +35,28 @@ def login(user, password):
 
 def login_after_menu(name):
     print(f'welcome to our service MR. {name}')
-    print('Fuck all')
+
+    user_choice = input("""
+        Enter A - For account Details
+        Enter D - For Deposite Money
+        Enter S - For send money
+        Enter L - Logout
+    """)
+    while user_choice != 'l':
+        if user_choice.lower() == 'a':
+            account_details()
+        elif user_choice == 'd':
+            deposite_money()
+        elif user_choice == 's':
+            send_money()
+        else:
+            print('Unknown command, Please try again..!')
+
+        user_choice = input("""
+                Enter A - For account Details
+                Enter D - For Deposite Money
+                Enter S - For send money
+                Enter L - Logout
+            """)
+
+
