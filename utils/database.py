@@ -35,3 +35,4 @@ def login(user, password):
 
 def login_after_menu(name):
     print(f'welcome to our service MR. {name}')
+    print('Fuck all')
