@@ -1,5 +1,34 @@
 import json
 
+file_name = 'login_data.json'
+
+def load_file():
+    with open(file_name, 'r+') as file:
+        file_content = json.load(file)
+
+    return file_content
+
+
+class JsonClass:
+    def __init__(self, file):
+        self.file_name = file
+
+
+    def json_load(self):
+        with open(self.file_name, 'r+') as file:
+            file_content = json.load(file)
+
+        return file_content
+
+    def json_dump(self,):
+        with open(self.file_name, 'r+') as file:
+            file_content = json.load(file)
+
+        return file_content
+
+
+files = JsonClass(file_name)
+
 
 def create(user, email, phone, password):
 
@@ -18,10 +47,10 @@ def create(user, email, phone, password):
 
 
 def login(user, password):
-    with open('login_data.json', 'r') as file: #context manager
-        file_content = json.load(file)
+    # with open('login_data.json', 'r+') as file: #context manager
+    #     file_content = json.load(file)
 
-    for _ in file_content:
+    for _ in files.json_load():
         if _['username'] == user:
             if _['password'] == password:
                 print('confirmed user name. ')
@@ -44,7 +73,7 @@ def login_after_menu(name):
     """)
     while user_choice != 'l':
         if user_choice.lower() == 'a':
-            account_details()
+            account_details(name)
         elif user_choice == 'd':
             deposite_money()
         elif user_choice == 's':
@@ -58,5 +87,18 @@ def login_after_menu(name):
                 Enter S - For send money
                 Enter L - Logout
             """)
+
+
+def account_details(name):
+    for _ in files.json_load():
+        if _['username'] == name:
+            print(
+                f"""
+                username:{_['username']}
+                Email: {_['email']} 
+                """
+            )
+
+    # login_after_menu(name)
 
 

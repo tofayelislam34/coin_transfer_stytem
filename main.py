@@ -19,11 +19,11 @@ def menu():
         - Already have account? then press 'L' to login.
         - Press 'E' to Exit
     """)
-    while user_input != 'q':
+    while user_input != 'e':
 
-        if user_input == 'c':
+        if user_input.lower() == 'c':
             account_create()
-        elif user_input == 'l':
+        elif user_input.lower() == 'l':
             login_data()
         else:
             print('Unknown Command! please try again..')
@@ -43,10 +43,10 @@ def account_create():
     password = input("password: ")
     data = (user, email, phone, password)
     database.create(*data)
-    user_choice = input("account successfully created. press 'L' to login now")
+    user_choice = input("account successfully created. press 'L' to login now or press 'Q' for main menu. ")
 
     while user_choice != 'q':
-        if user_choice == 'l':
+        if user_choice.lower() == 'l':
             login_data()
         else:
             print('Unknown command!. please try again')
@@ -57,8 +57,6 @@ def login_data():
     user_name = input('Enter your user name / email: ')
     password = input('Enter your password: ')
     database.login(user_name, password)
-
-
 
 
 menu()
